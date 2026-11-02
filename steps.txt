@@ -1,0 +1,14 @@
+# Note: pfSense's AWS Marketplace AMI does not support cloud-init/user-data for pushing a full
+# config.xml at boot (unlike the pfSense CE ISO images used elsewhere). So in practice there are
+# two realistic paths: upload the config after boot via the pfSense web GUI/SSH, or pre-bake a
+# custom AMI with the config already applied. There's no clean "day-0 user-data config injection"
+# for the Netgate Plus AMI the way there is for a generic Linux cloud-init image.
+
+# 1. Run "terraform plan" then "terraform apply" - this creates all VPCs and NVAs (pfSense EC2).
+# 2. Once the pfSense EC2 instance is ready, connect via the EC2 serial console and reset the
+#    admin password.
+# 3. Log in to pfSense at https://<EIP> and go to Diagnostics > Backup & Restore > Restore Backup,
+#    then restore "config-pfSense.home.xml" so the firewall has its initial routing and policy.
+# 4. Uncomment the "EC2 instance A" module and the "ALB" module in main.tf.
+# 5. Run "terraform apply" again so EC2 instance A can boot in the private subnet with internet
+#    connectivity (via pfSense) to install its cloud-init config.

@@ -1,0 +1,796 @@
+<?xml version="1.0"?>
+<pfsense>
+	<version>24.6</version>
+	<lastchange></lastchange>
+	<system>
+		<optimization>normal</optimization>
+		<hostname>my-pfSense</hostname>
+		<domain>home.arpa</domain>
+		<dnsallowoverride></dnsallowoverride>
+		<group>
+			<name>all</name>
+			<description><![CDATA[All Users]]></description>
+			<scope>system</scope>
+			<gid>1998</gid>
+		</group>
+		<group>
+			<name>admins</name>
+			<description><![CDATA[System Administrators]]></description>
+			<scope>system</scope>
+			<gid>1999</gid>
+			<member>0</member>
+			<member>2000</member>
+			<priv>page-all</priv>
+		</group>
+		<user>
+			<name>admin</name>
+			<descr><![CDATA[System Administrator]]></descr>
+			<scope>system</scope>
+			<groupname>admins</groupname>
+			<uid>0</uid>
+			<priv>user-shell-access</priv>
+			<authorizedkeys>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDcGMxanl0MWtPZXk2TCs5Yll2UlNQb2V3MksxYlFVRWdkbFJnYXErcG5BMjBMOEV6V1Yrd0Nua0RTaUZEYUZNc1Zob0k0YWFiaXVIelM0UWl6Z1BlMndVVnFxeDdTYk5GMkFDZDFOTVBkUmRvUE53cWJuOEpMcERoV04zWEJZN04rUkErbzZ2cG1DUzNaRlREY2ZERHJvUm15cTM3VEUydXAyOHZZSjY5TTNvQWlIK2kzc1FYaFJHZU9YYzBCc0JrQkw3TmVRQnp6UkZvVkVzalhnaWhVMlI4Z2lvdW1YeW9pZkZ5aGJjUCtnaVpPT2x3REF2aCtpenl0NitSNlRleEVvTXhNaG9lbnQzTUIxQmpCY2tWZUJHaDNJRURrUkhCcy9ka3pmZ1Y3bVJheHFlVTY0U0xVRmI1ckFGUWpPTURNekdrTFVqM3FGMldOYXhUbFgrQk4gSVQtVEVTVAo=</authorizedkeys>
+			<bcrypt-hash>$2y$12$87AGSUR95ybpmyvzMiEymeRJl4aGTH2i0T.j2uNbMcD0Pc8cMfn9S</bcrypt-hash>
+		</user>
+		<user>
+			<scope>user</scope>
+			<descr><![CDATA[EC2 User]]></descr>
+			<name>ec2-user</name>
+			<uid>2000</uid>
+			<authorizedkeys>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDcGMxanl0MWtPZXk2TCs5Yll2UlNQb2V3MksxYlFVRWdkbFJnYXErcG5BMjBMOEV6V1Yrd0Nua0RTaUZEYUZNc1Zob0k0YWFiaXVIelM0UWl6Z1BlMndVVnFxeDdTYk5GMkFDZDFOTVBkUmRvUE53cWJuOEpMcERoV04zWEJZN04rUkErbzZ2cG1DUzNaRlREY2ZERHJvUm15cTM3VEUydXAyOHZZSjY5TTNvQWlIK2kzc1FYaFJHZU9YYzBCc0JrQkw3TmVRQnp6UkZvVkVzalhnaWhVMlI4Z2lvdW1YeW9pZkZ5aGJjUCtnaVpPT2x3REF2aCtpenl0NitSNlRleEVvTXhNaG9lbnQzTUIxQmpCY2tWZUJHaDNJRURrUkhCcy9ka3pmZ1Y3bVJheHFlVTY0U0xVRmI1ckFGUWpPTURNekdrTFVqM3FGMldOYXhUbFgrQk4gSVQtVEVTVAo=</authorizedkeys>
+			<bcrypt-hash>$2y$12$uXD01lyXy34nNmbG8gojhurw2XrXwnPRXcJAy2P12PGItBREQ92E6</bcrypt-hash>
+		</user>
+		<nextuid>2001</nextuid>
+		<nextgid>2000</nextgid>
+		<timeservers>2.pfsense.pool.ntp.org</timeservers>
+		<webgui>
+			<protocol>https</protocol>
+			<loginautocomplete></loginautocomplete>
+			<nohttpreferercheck></nohttpreferercheck>
+			<max_procs>2</max_procs>
+			<nodnsrebindcheck></nodnsrebindcheck>
+			<noantilockout></noantilockout>
+			<ssl-certref>6ae8a6992e6c9</ssl-certref>
+			<dashboardcolumns>2</dashboardcolumns>
+			<althostnames></althostnames>
+		</webgui>
+		<disablenatreflection>yes</disablenatreflection>
+		<disablesegmentationoffloading></disablesegmentationoffloading>
+		<disablelargereceiveoffloading></disablelargereceiveoffloading>
+		<ipv6allow></ipv6allow>
+		<maximumtableentries>400000</maximumtableentries>
+		<powerd_ac_mode>hadp</powerd_ac_mode>
+		<powerd_battery_mode>hadp</powerd_battery_mode>
+		<powerd_normal_mode>hadp</powerd_normal_mode>
+		<bogons>
+			<interval>monthly</interval>
+		</bogons>
+		<hn_altq_enable></hn_altq_enable>
+		<serialspeed>115200</serialspeed>
+		<enableserial></enableserial>
+		<ssh>
+			<sshdkeyonly></sshdkeyonly>
+			<enable>enabled</enable>
+			<port>22</port>
+		</ssh>
+		<enablesshd></enablesshd>
+		<earlyshellcmd>service wireguardd start</earlyshellcmd>
+		<earlyshellcmd>/usr/local/bin/php-cgi -f /usr/local/bin/apply_patches.php</earlyshellcmd>
+		<timezone>Etc/UTC</timezone>
+		<pkg_repo_conf_path>26.07</pkg_repo_conf_path>
+	</system>
+	<interfaces>
+		<wan>
+			<enable></enable>
+			<if>ena0</if>
+			<descr><![CDATA[WAN]]></descr>
+			<ipaddr>dhcp</ipaddr>
+			<blockbogons></blockbogons>
+			<dhcphostname></dhcphostname>
+			<dhcp6-duid></dhcp6-duid>
+			<dhcp6-ia-pd-len>0</dhcp6-ia-pd-len>
+		</wan>
+		<lan>
+			<descr><![CDATA[LAN]]></descr>
+			<if>ena1</if>
+			<enable></enable>
+			<ipaddr>dhcp</ipaddr>
+			<dhcphostname></dhcphostname>
+			<alias-address></alias-address>
+			<alias-subnet>32</alias-subnet>
+			<dhcprejectfrom></dhcprejectfrom>
+			<adv_dhcp_pt_timeout></adv_dhcp_pt_timeout>
+			<adv_dhcp_pt_retry></adv_dhcp_pt_retry>
+			<adv_dhcp_pt_select_timeout></adv_dhcp_pt_select_timeout>
+			<adv_dhcp_pt_reboot></adv_dhcp_pt_reboot>
+			<adv_dhcp_pt_backoff_cutoff></adv_dhcp_pt_backoff_cutoff>
+			<adv_dhcp_pt_initial_interval></adv_dhcp_pt_initial_interval>
+			<adv_dhcp_pt_values>SavedCfg</adv_dhcp_pt_values>
+			<adv_dhcp_send_options></adv_dhcp_send_options>
+			<adv_dhcp_request_options></adv_dhcp_request_options>
+			<adv_dhcp_required_options></adv_dhcp_required_options>
+			<adv_dhcp_option_modifiers></adv_dhcp_option_modifiers>
+			<adv_dhcp_config_advanced></adv_dhcp_config_advanced>
+			<adv_dhcp_config_file_override></adv_dhcp_config_file_override>
+			<adv_dhcp_config_file_override_path></adv_dhcp_config_file_override_path>
+			<spoofmac></spoofmac>
+		</lan>
+	</interfaces>
+	<staticroutes>
+		<route>
+			<network>10.110.0.0/16</network>
+			<gateway>LAN_DHCP</gateway>
+			<descr><![CDATA[lan network]]></descr>
+		</route>
+	</staticroutes>
+	<snmpd>
+		<syslocation></syslocation>
+		<syscontact></syscontact>
+		<rocommunity>public</rocommunity>
+	</snmpd>
+	<diag>
+		<ipv6nat>
+			<ipaddr></ipaddr>
+		</ipv6nat>
+	</diag>
+	<syslog>
+		<filterdescriptions>1</filterdescriptions>
+	</syslog>
+	<nat>
+		<outbound>
+			<mode>automatic</mode>
+		</outbound>
+	</nat>
+	<filter>
+		<rule>
+			<type>pass</type>
+			<interface>enc0</interface>
+			<ipprotocol>inet46</ipprotocol>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[Default allow IPsec to any rule]]></descr>
+			<tracker>1793631892</tracker>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<interface>openvpn</interface>
+			<ipprotocol>inet</ipprotocol>
+			<statetype><![CDATA[keep state]]></statetype>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[Default Traffic from OpenVPN tunnel rule]]></descr>
+			<tracker>1793631894</tracker>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<interface>wan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<statetype><![CDATA[keep state]]></statetype>
+			<protocol>icmp</protocol>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<network>wanip</network>
+			</destination>
+			<descr><![CDATA[Default ICMP rule]]></descr>
+			<tracker>1793631888</tracker>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<interface>wan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<statetype><![CDATA[keep state]]></statetype>
+			<protocol>tcp</protocol>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<network>wanip</network>
+				<port>22</port>
+			</destination>
+			<descr><![CDATA[Default SSH rule _replace_src_with_mgmtnet_]]></descr>
+			<tracker>1793631890</tracker>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<interface>wan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<statetype><![CDATA[keep state]]></statetype>
+			<protocol>tcp</protocol>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<network>wanip</network>
+				<port>443</port>
+			</destination>
+			<descr><![CDATA[Default HTTPS rule _replace_src_with_mgmtnet_]]></descr>
+			<tracker>1793631896</tracker>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<interface>wan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<statetype><![CDATA[keep state]]></statetype>
+			<protocol>tcp</protocol>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<network>wanip</network>
+				<port>80</port>
+			</destination>
+			<descr><![CDATA[Default HTTP rule _replace_src_with_mgmtnet_]]></descr>
+			<tracker>1793631896</tracker>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<interface>wan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<statetype><![CDATA[keep state]]></statetype>
+			<protocol>udp</protocol>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<network>wanip</network>
+				<port>1194</port>
+			</destination>
+			<descr><![CDATA[Default OpenVPN rule]]></descr>
+			<tracker>1793631896</tracker>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>0100000101</tracker>
+			<type>pass</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statepolicy></statepolicy>
+			<statetype><![CDATA[keep state]]></statetype>
+			<pflow></pflow>
+			<os></os>
+			<srcmac></srcmac>
+			<dstmac></dstmac>
+			<source>
+				<address>LanSunbets</address>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[Default allow LAN to any rule]]></descr>
+			<bridgeto></bridgeto>
+			<updated>
+				<time>1793635940</time>
+				<username><![CDATA[admin@96.47.191.94 (Local Database)]]></username>
+			</updated>
+		</rule>
+	</filter>
+	<shaper></shaper>
+	<ipsec>
+		<client>
+			<enable></enable>
+			<user_source>Local Database</user_source>
+			<group_source>none</group_source>
+			<pool_address>172.25.53.0</pool_address>
+			<pool_netbits>24</pool_netbits>
+			<save_passwd></save_passwd>
+			<dns_server1>172.19.0.1</dns_server1>
+			<login_banner><![CDATA[Welcome to the Netgate IPsec VPN on AWS]]></login_banner>
+		</client>
+		<phase1>
+			<ikeid>1</ikeid>
+			<interface>wan</interface>
+			<mobile></mobile>
+			<disabled></disabled>
+			<mode>aggressive</mode>
+			<protocol>inet</protocol>
+			<myid_type>myaddress</myid_type>
+			<myid_data></myid_data>
+			<peerid_type>user_fqdn</peerid_type>
+			<peerid_data>admin@pfsense</peerid_data>
+			<encryption-algorithm>
+				<name>aes</name>
+				<keylen>128</keylen>
+			</encryption-algorithm>
+			<hash-algorithm>sha1</hash-algorithm>
+			<dhgroup>2</dhgroup>
+			<lifetime>86400</lifetime>
+			<pre-shared-key>netgate-aws-ipsec</pre-shared-key>
+			<private-key></private-key>
+			<certref></certref>
+			<caref></caref>
+			<authentication_method>xauth_psk_server</authentication_method>
+			<descr><![CDATA[Mobile IPsec clients]]></descr>
+			<nat_traversal>force</nat_traversal>
+			<dpd_delay>10</dpd_delay>
+			<dpd_maxfail>5</dpd_maxfail>
+			<iketype>ikev1</iketype>
+		</phase1>
+		<phase2>
+			<ikeid>1</ikeid>
+			<mode>tunnel</mode>
+			<localid>
+				<type>network</type>
+				<address>0.0.0.0</address>
+				<netbits>0</netbits>
+			</localid>
+			<remoteid>
+				<type>mobile</type>
+			</remoteid>
+			<protocol>esp</protocol>
+			<encryption-algorithm-option>
+				<name>aes</name>
+				<keylen>128</keylen>
+			</encryption-algorithm-option>
+			<hash-algorithm-option>hmac_sha1</hash-algorithm-option>
+			<pfsgroup>0</pfsgroup>
+			<lifetime>28800</lifetime>
+			<pinghost></pinghost>
+			<mobile></mobile>
+			<uniqid>6ae8a6902a10a</uniqid>
+			<reqid>1</reqid>
+			<descr><![CDATA[Netgate Mobile IPsec]]></descr>
+		</phase2>
+	</ipsec>
+	<aliases>
+		<alias>
+			<name>Networks_to_NAT</name>
+			<address>127.0.0.0/8 172.24.42.0/24 172.25.53.0/24</address>
+			<descr><![CDATA[Networks that may originate internet traffic]]></descr>
+			<type>network</type>
+			<detail><![CDATA[Loopback||Default Remote Access VPN||Default Mobile IPsec VPN]]></detail>
+		</alias>
+		<alias>
+			<name>LanSunbets</name>
+			<type>network</type>
+			<address>10.110.5.0/24 10.110.6.0/24 10.110.2.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[zone b||zone a||Entry added Mon, 02 Nov 2026 18:42:44 +0000]]></detail>
+		</alias>
+	</aliases>
+	<proxyarp></proxyarp>
+	<cron>
+		<item>
+			<minute>*/1</minute>
+			<hour>*</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/sbin/newsyslog</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>3</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/etc/rc.periodic daily</command>
+		</item>
+		<item>
+			<minute>15</minute>
+			<hour>4</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>6</wday>
+			<who>root</who>
+			<command>/etc/rc.periodic weekly</command>
+		</item>
+		<item>
+			<minute>30</minute>
+			<hour>5</hour>
+			<mday>1</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/etc/rc.periodic monthly</command>
+		</item>
+		<item>
+			<minute>1,31</minute>
+			<hour>0-5</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 adjkerntz -a</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>3</hour>
+			<mday>1</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.update_bogons.sh</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>1</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.dyndns.update</command>
+		</item>
+		<item>
+			<minute>*/60</minute>
+			<hour>*</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /usr/local/sbin/expiretable -v -t 3600 virusprot</command>
+		</item>
+		<item>
+			<minute>30</minute>
+			<hour>12</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.update_urltables</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>0</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.update_pkg_metadata</command>
+		</item>
+	</cron>
+	<wol></wol>
+	<rrd>
+		<enable></enable>
+		<category>left=system-processor&amp;right=&amp;resolution=300&amp;timePeriod=-1d&amp;startDate=&amp;endDate=&amp;startTime=0&amp;endTime=0&amp;graphtype=line&amp;invert=true&amp;refresh-interval=0</category>
+	</rrd>
+	<widgets>
+		<sequence>system_information:col1:open:0,disks:col1:open:0,netgate_services_and_support:col2:open:0,interfaces:col2:open:0</sequence>
+		<period>10</period>
+	</widgets>
+	<openvpn></openvpn>
+	<dnshaper></dnshaper>
+	<unbound>
+		<enable></enable>
+		<dnssec></dnssec>
+		<active_interface></active_interface>
+		<outgoing_interface></outgoing_interface>
+		<custom_options></custom_options>
+		<hideidentity></hideidentity>
+		<hideversion></hideversion>
+		<dnssecstripped></dnssecstripped>
+		<qname-minimisation></qname-minimisation>
+	</unbound>
+	<vlans></vlans>
+	<qinqs></qinqs>
+	<sysctl>
+		<item>
+			<tunable>debug.trace_on_panic</tunable>
+			<value>1</value>
+			<descr><![CDATA[Print stack trace on kernel panic]]></descr>
+		</item>
+		<item>
+			<tunable>debug.debugger_on_panic</tunable>
+			<value>0</value>
+			<descr><![CDATA[Run debugger on kernel panic]]></descr>
+		</item>
+	</sysctl>
+	<gateways>
+		<gateway_item>
+			<interface>wan</interface>
+			<gateway>dynamic</gateway>
+			<name>WAN_DHCP</name>
+			<weight>1</weight>
+			<ipprotocol>inet</ipprotocol>
+			<interval></interval>
+			<descr><![CDATA[Interface WAN_DHCP Gateway]]></descr>
+			<monitor_disable></monitor_disable>
+			<default_gw></default_gw>
+		</gateway_item>
+		<gateway_item>
+			<interface>lan</interface>
+			<gateway>dynamic</gateway>
+			<name>LAN_DHCP</name>
+			<weight>1</weight>
+			<ipprotocol>inet</ipprotocol>
+			<descr><![CDATA[Interface LAN_DHCP Gateway]]></descr>
+			<gw_down_kill_states></gw_down_kill_states>
+		</gateway_item>
+	</gateways>
+	<virtualip>
+		<vip>
+			<mode>ipalias</mode>
+			<interface>lo0</interface>
+			<descr><![CDATA[Loopback interface for IPsec client DNS]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>172.19.0.1</subnet>
+		</vip>
+	</virtualip>
+	<revision>
+		<time>1793645822</time>
+		<description><![CDATA[admin@96.47.191.94 (Local Database): Status: Monitoring: updated old configuration.]]></description>
+		<username><![CDATA[admin@96.47.191.94 (Local Database)]]></username>
+	</revision>
+	<cert>
+		<refid>6ae8a6992e6c9</refid>
+		<descr><![CDATA[GUI default (6ae8a6992e6c9)]]></descr>
+		<autorenew>enabled</autorenew>
+		<type>server</type>
+		<crt>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVsakNDQTM2Z0F3SUJBZ0lJR1UvZGg3QVhJZFl3RFFZSktvWklodmNOQVFFTEJRQXdZekZCTUQ4R0ExVUUKQ2hNNFRtVjBaMkYwWlNCd1psTmxibk5sSUZCc2RYTWdSMVZKSUdSbFptRjFiSFFnVTJWc1ppMVRhV2R1WldRZwpRMlZ5ZEdsbWFXTmhkR1V4SGpBY0JnTlZCQU1URlhCbVUyVnVjMlV0Tm1GbE9HRTJPVGt5WlRaak9UQWVGdzB5Ck5qRXhNREl4TlRBME5UZGFGdzB5TnpBMU1qRXhOVEEwTlRkYU1HTXhRVEEvQmdOVkJBb1RPRTVsZEdkaGRHVWcKY0daVFpXNXpaU0JRYkhWeklFZFZTU0JrWldaaGRXeDBJRk5sYkdZdFUybG5ibVZrSUVObGNuUnBabWxqWVhSbApNUjR3SEFZRFZRUURFeFZ3WmxObGJuTmxMVFpoWlRoaE5qazVNbVUyWXprd2dnRWlNQTBHQ1NxR1NJYjNEUUVCCkFRVUFBNElCRHdBd2dnRUtBb0lCQVFET1J4V3RvOGpocy9uNkliRUw1WlJNbzhvL3Z2Qm9VU2tMbTlJVUIweUoKSUVFRU1aaFFPRlVFU05VOStsS3RzeEtQb1ZLRHJIaFp6cFp1TzFBaENSZTlEdEU5ZVZXZk5iMGVJTnd3N2FJRwpHYk41SlZ3THFjdVNsaDhSS0FqZ3V6a2NxTFJoQW5qY1RrV0drMytVSVVmN1BMVkVrTzU4cGEzd3ZlUVp5UVVLClZVN0xKS3kxbDJnc0cvUFpYZ2VRd2ZrRzlncElONWMrUEV6cWc0SWJ3SSsvTDV4VjhESWpXK1FCTEtZZFpEeUUKR1dicXpRb3hFQWFUb1ZVNktqTTIxRk1XWlJFNDhoQVpvZlF1R2V1Sys5anFuVFVpSXpwKy9YQmw1dmUwK1Evcwp3QWxIU3Jka2x0ZmxHbXkyUlpsM3N0aFNRT2ZRVGpOdDkxM2R5V1BDay9ZZEFnTUJBQUdqZ2dGTU1JSUJTREFKCkJnTlZIUk1FQWpBQU1CRUdDV0NHU0FHRytFSUJBUVFFQXdJR1FEQUxCZ05WSFE4RUJBTUNCYUF3TXdZSllJWkkKQVliNFFnRU5CQ1lXSkU5d1pXNVRVMHdnUjJWdVpYSmhkR1ZrSUZObGNuWmxjaUJEWlhKMGFXWnBZMkYwWlRBZApCZ05WSFE0RUZnUVV4eHN4akU2Uk9PdWlXRS9BbWcwZ1RDcE5PWjh3ZkFZRFZSMGpCSFV3YzZGbnBHVXdZekZCCk1EOEdBMVVFQ2hNNFRtVjBaMkYwWlNCd1psTmxibk5sSUZCc2RYTWdSMVZKSUdSbFptRjFiSFFnVTJWc1ppMVQKYVdkdVpXUWdRMlZ5ZEdsbWFXTmhkR1V4SGpBY0JnTlZCQU1URlhCbVUyVnVjMlV0Tm1GbE9HRTJPVGt5WlRaagpPWUlJR1UvZGg3QVhJZFl3SndZRFZSMGxCQ0F3SGdZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ0JnZ3JCZ0VGCkJRZ0NBakFnQmdOVkhSRUVHVEFYZ2hWd1psTmxibk5sTFRaaFpUaGhOams1TW1VMll6a3dEUVlKS29aSWh2Y04KQVFFTEJRQURnZ0VCQUlZUHA2enlTQTZRWVppdFF1b2JtOENrZks4dWs5UW15TFJDRzUyQ2c2NVdMLy9UTjE5bwpDTDlTZ2lLWVVGNGtIUUlHSTREOVNtTlJEVXBxcFY5UFJsUEZUVERVb0sxQlk0YUg3NytLVVRxMGhmUlRmMHRRCjhDelZoYXdNbHVkTWJLaktTQ2RSYXVtU1NYR3hGOFIvK2tvT2xxUzhTaWlqK2hvUGpZaWdqK2J0QjYwK0xHRGsKNnJmZXBIY2VJOXNhMTI0dGVEc21qR0JwWWtZekRWdld1aG1tMzZlOUI5Rkc4eWJ5WUdiR1lSOGhZUEJxVGhSVQpEc2tkNEtPaFR6TFRzTWJYeVpQOE1XUlFNeUMzYlo0ajQzMVVlak1sS1B0ZVI1eFprNitHNzFVTmpFT3VjSXVvCjBVenpCc3lmcTlDSmhXVUJXdWg5RXkxRzlqSWgxNEZQWnJRPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==</crt>
+		<prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRE9SeFd0bzhqaHMvbjYKSWJFTDVaUk1vOG8vdnZCb1VTa0xtOUlVQjB5SklFRUVNWmhRT0ZVRVNOVTkrbEt0c3hLUG9WS0RySGhaenBadQpPMUFoQ1JlOUR0RTllVldmTmIwZUlOd3c3YUlHR2JONUpWd0xxY3VTbGg4UktBamd1emtjcUxSaEFuamNUa1dHCmszK1VJVWY3UExWRWtPNThwYTN3dmVRWnlRVUtWVTdMSkt5MWwyZ3NHL1BaWGdlUXdma0c5Z3BJTjVjK1BFenEKZzRJYndJKy9MNXhWOERJalcrUUJMS1lkWkR5RUdXYnF6UW94RUFhVG9WVTZLak0yMUZNV1pSRTQ4aEFab2ZRdQpHZXVLKzlqcW5UVWlJenArL1hCbDV2ZTArUS9zd0FsSFNyZGtsdGZsR215MlJabDNzdGhTUU9mUVRqTnQ5MTNkCnlXUENrL1lkQWdNQkFBRUNnZ0VBQlhtdnVyVEhnRmcwNDkyN2s1ZUQzM2MvTWRYT3Vmek0yYkpJajFWZlE4bzAKOTVoeWFpU3pVRmUzazFEVVJpaU9tYWM4VW1MdkFlRkEyY3NJd09FUWZkUDBIQTAwWE40WFlrS1lpRkx5YzB1QQoyYVVkemtYSVJ5Q1FKcll1UUNXRmFmdy9aM2pNNlBvZk95ZlVvZGtIK1FSVVFtNC9hbFJ0SzNWUU8wVlJuOWtnCnlCOXhSdHBTSXErS2ZkZERPbUxadzlvRE1BVmxZenlFS1I3d05hQVZvYVAxdlVMdElnRHNyanJxUGM1OWYzOU0KN3dRdkViWXRqc0xlOU9NQ0lLZGxuV2dORFJyWVhiRzlrS2x1MTBEVjVCUDR5K2p1OTZMTldhOTBkUXVVNjZQSwoyRTRYTmZGRnNOaVJXT2E4ZmYzUjlaa2pBZ3JhbGJmaGZ1dEdJeE1nWVFLQmdRRDA3amxWWHd4Q0ZCVlprSkNpClpjZHNSNXM5VUVic0hNazZCOS9aVWdyOHJuOFNocXJJNUdmMEp4ZGhWSTFLMkJLNGRSTVdZYTRNNmtCd0Y1NEoKR2VjajNuTnkxNlR1RllFY1ZUSGxCWnlJT3lzK0tjVVh6aXBmek5HMFd0cDZWcEU3bk5kT3M4eFRKVk9PTUJyLwp5ZVhXVGRpcHlCSEFtN0NKZmNWcFdlM2YvUUtCZ1FEWG1haHZKYVdnbXVBbnRqMnVnWTg4QXdVK3NlMkszdGswCjlTUi85Qlhhb0ZGM0RQNU1iTCtlVFRMUXlkdzFrNkI4NUxHS0VMWHRtbk84aXE2TWx0N3huSHJhYVUvMUwvUmMKdGp6Z1JMRisrdnZjaGVRaHpDdE5jMy9vNkswMnErdE90bGYyQW8zZVNyaUJPbWNUTFNqNm1Qb3Z3WEo1bElqLwpEbzhEWHdING9RS0JnQW0ybE5GODVuaU1ZVmhlOGsxdWFkMHliY2FkczJKVHRlczJPcnRjbEpEMnZwVldmOWxkCnJYMnlPeXdoOVVSOWt5aDdoQmxFSUdua3RFOTlzRWUrSGp0KzYrY25CQ1JvOStqT3ZCN1AvU2d0NklZYmsvUmcKdWE5NDZPd1ZHa3IxdWVhNlRwT1JiODN3VWdMMmgydVRieWp6aDE4Y1R3L3JYTEhuS2ZnR2wvZGxBb0dCQUtOVQpWTFZlMzhwN2liU0w2czU0ZC9vT2o3cWZNRVV6N1hpZy9iV3hRNTBNTnFycHZQeElwaUZXZWxpUms3RkMxU0hJClhuY3BrYWtlaU84Y1lIOUJERVFkTnpTZTgyUGJvRk5iKzJJcXFBeDZOck1vKzFwZlFhNjdBUHVBeVRmUnBjRkwKZ2Zkc2wreit6aWVZQnQ0UUtDc3dHTmgweERRMndsSDJ4WURZU0xZQkFvR0JBUEh5U25NSzg1TU9MbE5zcGY0cApZMVUzUndLWkFLWWdwWGY5ckJ4Wm0rTExNaGtrb3dySmlCR21HUkRpazFnVGRRcjNGdkpBejBrUjBJUkhiTm1yClBwbk1WdnpMR1Aya3NWY3h0aGhwRlVqcVBHamEzc3hVV2VjRmQ2UUhpSUVnRHpId2I2WWxqd0hGNkJIdEZtZGsKUkQwOU15bmpEZzlGUDV2TDAwMlBqQWplCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K</prv>
+	</cert>
+	<installedpackages>
+		<package>
+			<name>AWS High Availability</name>
+			<internal_name>aws-highavail</internal_name>
+			<descr><![CDATA[Extensions for high availability in AWS VPC utilizing EC2 route tables and ElasticIP.]]></descr>
+			<version>1.3.5</version>
+			<configurationfile>aws_highavail_ips.xml</configurationfile>
+			<tabs>
+				<tab>
+					<text><![CDATA[IPs]]></text>
+					<url>pkg.php?xml=aws_highavail_ips.xml</url>
+				</tab>
+				<tab>
+					<text><![CDATA[Routes]]></text>
+					<url>pkg.php?xml=aws_highavail_routes.xml</url>
+				</tab>
+				<tab>
+					<text><![CDATA[Elastic IPs]]></text>
+					<url>pkg.php?xml=aws_highavail_eips.xml</url>
+				</tab>
+			</tabs>
+			<include_file>/usr/local/pkg/aws_highavail.inc</include_file>
+			<plugins>
+				<item>
+					<type>plugin_carp</type>
+				</item>
+				<item>
+					<type>plugin_xmlrpc_send</type>
+				</item>
+				<item>
+					<type>plugin_xmlrpc_recv</type>
+				</item>
+			</plugins>
+		</package>
+		<package>
+			<name>AWS VPC Wizard</name>
+			<internal_name>aws-wizard</internal_name>
+			<pkginfolink>https://docs.netgate.com/pfsense/en/latest/packages/aws-vpc-wizard/index.html</pkginfolink>
+			<descr><![CDATA[AWS VPC Wizard.&lt;br /&gt;
+			This package implements a wizard for configuring AWS VPC instances on a pfSense firewall.&lt;br /&gt; ]]></descr>
+			<version>0.12_2</version>
+			<configurationfile>aws_wizard.xml</configurationfile>
+		</package>
+		<package>
+			<name>IPsec Profile Wizard</name>
+			<internal_name>ipsec-profile-wizard</internal_name>
+			<descr><![CDATA[IPsec profile wizard for iOS and Windows Clients&lt;br /&gt;
+			This package generates IPsec client profiles for iOS and Windows devices.&lt;br /&gt; ]]></descr>
+			<version>1.2.6</version>
+			<configurationfile>ipsec-profile.xml</configurationfile>
+		</package>
+		<package>
+			<name>Netgate Firmware Upgrade</name>
+			<internal_name>Netgate_Firmware_Upgrade</internal_name>
+			<descr><![CDATA[Provide a mechanism to upgrade Firmware for Netgate hardware models.]]></descr>
+			<version>26.07.0</version>
+			<configurationfile>netgate_firmware_upgrade.xml</configurationfile>
+			<include_file>/usr/local/pkg/netgate_firmware_upgrade.inc</include_file>
+		</package>
+		<package>
+			<name>Netgate Nexus</name>
+			<internal_name>Nexus</internal_name>
+			<descr><![CDATA[Netgate(R) Nexus revolutionizes multi-instance
+	management for pfSense(R) Plus, empowering operators to effortlessly
+	manage hundreds of pfSense Plus instances through a secure, unified, and
+	intuitive interface. With its comprehensive GUI and robust REST API,
+	Netgate Nexus gives your organization the flexibility to tailor and
+	automate critical operational tasks, driving greater efficiency and
+	agility. Whether you&apos;re scaling deployments or streamlining network
+	management, Netgate Nexus delivers the control and customization you
+	need to stay ahead.]]></descr>
+			<version>26.07_3</version>
+			<configurationfile>nexus.xml</configurationfile>
+		</package>
+		<package>
+			<name>sudo</name>
+			<pkginfolink>https://docs.netgate.com/pfsense/en/latest/packages/sudo.html</pkginfolink>
+			<descr><![CDATA[sudo allows delegation of privileges to users in the shell so commands can be run as other users, such as root.]]></descr>
+			<website>http://www.sudo.ws/</website>
+			<version>0.3.4</version>
+			<configurationfile>sudo.xml</configurationfile>
+			<include_file>/usr/local/pkg/sudo.inc</include_file>
+			<plugins>
+				<item>
+					<type>plugin_xmlrpc_send</type>
+				</item>
+				<item>
+					<type>plugin_xmlrpc_recv</type>
+				</item>
+				<item>
+					<type>plugin_xmlrpc_recv_done</type>
+				</item>
+			</plugins>
+		</package>
+		<package>
+			<name>System Patches</name>
+			<internal_name>System_Patches</internal_name>
+			<descr><![CDATA[A package to apply and maintain custom system patches.]]></descr>
+			<version>2.3.5_1</version>
+			<configurationfile>systempatches.xml</configurationfile>
+			<include_file>/usr/local/pkg/patches.inc</include_file>
+		</package>
+		<package>
+			<name>WireGuard</name>
+			<descr><![CDATA[WireGuard is an extremely simple yet fast and modern VPN&lt;br /&gt;
+				that utilizes state-of-the-art cryptography. It aims to be&lt;br /&gt;
+				faster, simpler, leaner, and more useful than IPSec, while&lt;br /&gt;
+				avoiding the massive headache. It intends to be considerably&lt;br /&gt;
+				more performant than OpenVPN. WireGuard is designed as a&lt;br /&gt;
+				general purpose VPN for running on embedded interfaces and&lt;br /&gt;
+				super computers alike, fit for many different circumstances.&lt;br /&gt;
+				Initially released for the Linux kernel, it is now&lt;br /&gt;
+				cross-platform and widely deployable. It is currently under&lt;br /&gt;
+				heavy development, but already it might be regarded as the&lt;br /&gt;
+				most secure, easiest to use, and simplest VPN solution in&lt;br /&gt;
+				the industry.]]></descr>
+			<pkginfolink>https://github.com/pfsense/FreeBSD-ports/commits/devel/net/pfSense-pkg-WireGuard</pkginfolink>
+			<version>0.2.13_5</version>
+			<configurationfile>wireguard.xml</configurationfile>
+			<include_file>/usr/local/pkg/wireguard/includes/wg.inc</include_file>
+		</package>
+		<menu>
+			<name>AWS High Availability</name>
+			<section>System</section>
+			<url>pkg.php?xml=aws_highavail_ips.xml</url>
+		</menu>
+		<menu>
+			<name>AWS VPC VPN Wizard</name>
+			<tooltiptext>AWS VPC Connection Wizard</tooltiptext>
+			<section>VPN</section>
+			<url>/wizard.php?xml=vpc_vpn_wizard.xml</url>
+		</menu>
+		<menu>
+			<name>IPsec Export: Apple Profile</name>
+			<tooltiptext>IPsec Profile Export</tooltiptext>
+			<section>VPN</section>
+			<url>vpn_ipsec_profile.php</url>
+		</menu>
+		<menu>
+			<name>IPsec Export: Windows</name>
+			<tooltiptext>IPsec Profile Export</tooltiptext>
+			<section>VPN</section>
+			<url>vpn_ipsec_export_win.php</url>
+		</menu>
+		<menu>
+			<name>Netgate Firmware Upgrade</name>
+			<tooltiptext>Upgrade Firmware of Netgate hardware models.</tooltiptext>
+			<section>System</section>
+			<url>/netgate_firmware_upgrade.php</url>
+		</menu>
+		<menu>
+			<name>sudo</name>
+			<section>System</section>
+			<url>/pkg_edit.php?xml=sudo.xml</url>
+		</menu>
+		<menu>
+			<name>Patches</name>
+			<section>System</section>
+			<url>/system_patches.php</url>
+		</menu>
+		<menu>
+			<name>WireGuard</name>
+			<section>VPN</section>
+			<url>/wg/vpn_wg_tunnels.php</url>
+		</menu>
+		<menu>
+			<name>WireGuard</name>
+			<section>Status</section>
+			<url>/wg/status_wireguard.php</url>
+		</menu>
+		<service>
+			<name>aws-highavail</name>
+			<description><![CDATA[AWS High Availability Periodic Monitor]]></description>
+			<startcmd>exec(&quot;/usr/local/bin/minicron 60 /var/run/aws_highavail.pid /usr/local/pkg/aws_highavail/aws_highavail_periodic&quot;);</startcmd>
+			<stopcmd>exec(&quot;/bin/pkill -F /var/run/aws_highavail.pid&quot;);</stopcmd>
+			<custom_php_service_status_command>&quot;&quot;; $output=[];  @exec(&quot;/bin/pgrep -F /var/run/aws_highavail.pid&quot;, $output, $status); $rc = ($status == 0);</custom_php_service_status_command>
+		</service>
+		<service>
+			<name>wireguard</name>
+			<rcfile>wireguardd</rcfile>
+			<executable>php_wg</executable>
+			<description><![CDATA[WireGuard]]></description>
+		</service>
+		<sudo>
+			<config>
+				<row>
+					<username><![CDATA[user:root]]></username>
+					<runas>user:root</runas>
+					<cmdlist>ALL</cmdlist>
+				</row>
+				<row>
+					<username><![CDATA[user:admin]]></username>
+					<runas>user:root</runas>
+					<cmdlist>ALL</cmdlist>
+				</row>
+				<row>
+					<username><![CDATA[group:admins]]></username>
+					<runas>user:root</runas>
+					<cmdlist>ALL</cmdlist>
+				</row>
+				<row>
+					<username><![CDATA[user:ec2-user]]></username>
+					<runas>user:root</runas>
+					<nopasswd>ON</nopasswd>
+					<cmdlist>ALL</cmdlist>
+				</row>
+			</config>
+		</sudo>
+		<shellcmdsettings>
+			<config>
+				<cmd>service wireguardd start</cmd>
+				<cmdtype>earlyshellcmd</cmdtype>
+				<description><![CDATA[WireGuard earlyshellcmd (DO NOT EDIT/DELETE!)]]></description>
+			</config>
+		</shellcmdsettings>
+		<wireguard>
+			<config>
+				<enable>off</enable>
+				<keep_conf>yes</keep_conf>
+				<resolve_interval>300</resolve_interval>
+				<resolve_interval_track>no</resolve_interval_track>
+				<interface_group>all</interface_group>
+				<hide_secrets>yes</hide_secrets>
+				<hide_peers>yes</hide_peers>
+			</config>
+		</wireguard>
+	</installedpackages>
+	<ifgroups>
+		<ifgroupentry>
+			<ifname>WireGuard</ifname>
+			<descr><![CDATA[WireGuard Interface Group (DO NOT EDIT/DELETE!)]]></descr>
+			<members></members>
+		</ifgroupentry>
+	</ifgroups>
+	<ppps></ppps>
+	<sshdata>
+		<sshkeyfile>
+			<filename>ssh_host_rsa_key</filename>
+			<xmldata>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</xmldata>
+		</sshkeyfile>
+		<sshkeyfile>
+			<filename>ssh_host_rsa_key.pub</filename>
+			<xmldata>FcdHkptAAEDRvU8xe8oG1IiwmCoTJXJqgrSjERI5SoQ+vcd/8+ovS/l7XrIv8ScJODiT6SM/qf9XEX1R+lEWfbkONFIl7Yk1xcAB8fDmbrzRGmxGlGC/DOBUyNV5jGy2ss0jIlZNqAytWQYmut5VqX5mDToCX/g4yUrjylJ9wXwjzsXeoKkLDFno+q8bNwzpPRbAhB5wzhvFugOry0RTXk/s42FJ096tfKmm17m+TbKMiB6hquTjZiZ1jiLurZimA9hHqAzyGKZtezYZ93B2yW+ydSHTdRcUK2U9hHeBXdFhlZOWW2fLxnFoHaRwH5qizSsQZ5vGpmLdPB8b3bSPtCkv3pm58lZKsW3BgwOL/qKzvMN7GveoKJgH8vTYJAI6JO6pm2mI6WUxHapL8MGfrslpiNFEOIIWat1sihs4MyvyAnPnQ4aWEi3bY04iUJy/PueeI0YDU9xYqBGnUjHZVcDAeg6lK6KioKBcl8TeM7ytOr2usxzsxXHuKMEXvNtWdAgCFZTziizmejX24JINQNKVt+1qXtpfd+N5ry6HtjGvptWZzh1GkHO+APHYJR2IMJGYbP6SkFrDXlok+qJy/c20UECv9v3R5k8Mne69KMyGXQOYxZ2BctItKk48FuKlUrdwUxgafsZ5f35S+xCAuX0mCkPiTa12LUKo9Jo+s1t5aSJmsvtjrekhd7mupGfUxvM4qlHTOzQ+uVllBwQtDasutYrC9LuRc/lHs9oX2aPEaiddCOtnnbbRPEoaXI0L2r6/v+ZheP8dn2HRL8WfcuiKP9k8Zr/+AQ==</xmldata>
+		</sshkeyfile>
+		<sshkeyfile>
+			<filename>ssh_host_ed25519_key</filename>
+			<xmldata>nZDNboJAFIX3PAV7YwjiGF3OwAwgOIKC6OwAKdIif1IGefp2TJp0002/xclN7s25J2c+/wZh06by3sP0eLRk72CfYIBlB1/Eci4lGiqTik6xrnbs/NFf3zEUIBMMyT0UI07um0/mwx+QkB0X2k/pIu9ZJPlPGoTjXhzpcKVV9Gm3ThPyAaLCu/HdalmwNIP8HMe1a83i03Bu+Pr1ytFvfsQ3dUgekuf/dv2vqSRCo5aYpECWQYmuRkYI4rR3Fd8GubvWjGtuVbPxQECjKNnUZalmF3VbBvoamvbMglNXbKVyXBro2rT54w000SarDP7KR6rtkGgHmJosYBGY2BHUyUIt3Tt5piZGMN9h5F8s6VUxpsbf9X8B</xmldata>
+		</sshkeyfile>
+		<sshkeyfile>
+			<filename>ssh_host_ed25519_key.pub</filename>
+			<xmldata>Ky7O0E1NMTI1NbRUcAQCZ2O/qkRnw5woF09DvxBXU5CYp0tRarKxZ2Z+YU6Is4Wju6e2h2NVUaZXToWJi1NKQWF6cZppQbhlap5LeaBCUX5+iUNBWnBqXnGqXkZ+bqpeYlFBIhcA</xmldata>
+		</sshkeyfile>
+	</sshdata>
+</pfsense>
