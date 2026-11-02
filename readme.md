@@ -5,7 +5,7 @@ This repository is a Terraform starting point for a security-focused AWS deploym
 The project is intended as a portfolio and learning reference for infrastructure-as-code, network segmentation, least-privilege security groups, and repeatable AWS deployments. It is not a production-ready blueprint without additional hardening and validation.
 
 ## Architecture
-
+![architecture diagram](Diagram.jpg)
 The Terraform configuration in `us-east-1` creates:
 
 - One VPC with a `/16` CIDR block.
@@ -75,7 +75,7 @@ The backend is configured in [backend.tf](./backend.tf):
 ```hcl
 terraform {
   backend "s3" {
-    bucket       = "ztr-bucket-east-us-1-terraform"
+    bucket       = "bucket-east-us-1-terraform"
     key          = "state/terraform.tfstate"
     region       = "us-east-1"
     use_lockfile = true
