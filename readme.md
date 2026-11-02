@@ -42,8 +42,6 @@ The two Availability Zones provide a useful foundation for multi-AZ application 
 ├── backend.tf                 # S3 remote state backend
 ├── variables.tf               # Input variables and defaults
 ├── terraform.tfvars           # Local/test values; review before use
-├── terraform-prod.tfvars      # Production-oriented example values
-├── terraform-test.tfvars      # Test-oriented example values
 ├── steps.txt                  # Original pfSense bootstrap notes
 └── modules/
     ├── ALB/
